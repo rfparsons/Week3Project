@@ -37,6 +37,21 @@ public class Game {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	/**
+	 * @param title
+	 * @param publisher
+	 * @param platform
+	 * @param year
+	 */
+	public Game(String title, String publisher, String platform, int year) {
+		super();
+		this.title = title;
+		this.publisher = publisher;
+		this.platform = platform;
+		this.year = year;
+	}
+
 	/**
 	 * @return the id
 	 */
@@ -98,6 +113,20 @@ public class Game {
 	 */
 	public void setYear(int year) {
 		this.year = year;
+	}
+	
+
+	@Override
+	public String toString() {
+		return "Game [title=" + title + ", publisher=" + publisher + ", platform=" + platform + ", year=" + year + "]";
+	}
+
+	/**
+	 * @return
+	 */
+	public String returnGameDetails() {
+		// TODO Auto-generated method stub
+		return title + " (" + year + ", " + platform + ") by " + publisher;
 	}
 	
 	
