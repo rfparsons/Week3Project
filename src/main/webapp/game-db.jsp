@@ -8,8 +8,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+<form method = "post" action = "navigationServlet">
 <table>
-<c:forEach items="${requestScope.allGames}" var="currentgame">
+<c:forEach items="${requestScope.allGames}" var="currentgame"> <!-- allItems might have been unrelated to ShoppingList -->>
 <tr>
 <td><input type="radio" name="id" value="${currentgame.id}"></td>
 <td>${currentgame.title}</td>
@@ -19,5 +20,9 @@
 </tr>
 </c:forEach>
 </table>
+<input type = "submit" value = "edit" name="doThisToItem">
+<input type = "submit" value = "delete" name="doThisToItem">
+<input type="submit" value = "add" name = "doThisToItem">
+</form>
 </body>
 </html>
