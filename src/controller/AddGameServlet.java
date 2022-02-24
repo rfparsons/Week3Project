@@ -28,6 +28,7 @@ public class AddGameServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		System.out.println("CCCCCCCCCCCCCCCCCCCCCCC");
 		String title = request.getParameter("title");
 		String publisher = request.getParameter("publisher");
 		String platform = request.getParameter("platform");

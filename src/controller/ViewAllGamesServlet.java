@@ -10,16 +10,17 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ViewAllItemsServlet
  */
-@WebServlet("/viewAllItemsServlet")
-public class ViewAllItemsServlet extends HttpServlet {
+@WebServlet("/viewAllGamesServlet")
+public class ViewAllGamesServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ViewAllItemsServlet() {
+    public ViewAllGamesServlet() {
         super();
         // TODO Auto-generated constructor stub
+        System.out.println("DDDDDDDDDDDDDDDDDDDDDDDDDDDDDD");
     }
 
 	/**
@@ -27,6 +28,8 @@ public class ViewAllItemsServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+//		int goodNum = 1/0;
+		System.out.println("BBBBBBBBBBBBBBBBBBBBBBBBBBBBB");
 		GameHelper gh = new GameHelper();
 		
 		request.setAttribute("allGames", gh.showAllGames());
@@ -37,6 +40,10 @@ public class ViewAllItemsServlet extends HttpServlet {
 			path = "/index.html";
 		}
 		
+//		path = "/cat.jpg"; // public domain image of a cat for testing
+		
+		System.out.println(path);
+		
 		getServletContext().getRequestDispatcher(path).forward(request, response);
 	}
 
@@ -45,6 +52,7 @@ public class ViewAllItemsServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		System.out.println("AAAAAAAAAAAAAAAAAAAAAAAA");
 		doGet(request, response);
 	}
 
