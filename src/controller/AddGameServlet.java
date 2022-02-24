@@ -38,6 +38,8 @@ public class AddGameServlet extends HttpServlet {
 		gh.insertGame(gm);
 		
 		getServletContext().getRequestDispatcher("/index.html").forward(request, response);
+		
+//		getServletContext().getRequestDispatcher("google.com").forward(request, response);
 	}
 
 }
