@@ -38,7 +38,11 @@ public class AddGameServlet extends HttpServlet {
 		Console platform = new Console(platformName);
 		ConsoleHelper ch = new ConsoleHelper();
 		
-		ch.insertConsole(platform);
+		boolean consoleExists = ch.insertConsole(platform);
+		
+		if (consoleExists) {
+			platform = ch.findConsole(platformName);
+		}
 		
 		Game gm = new Game(title, publisher, platform, year);
 		GameHelper gh = new GameHelper();
