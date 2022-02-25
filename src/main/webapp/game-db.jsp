@@ -15,7 +15,7 @@
 <td><input type="radio" name="id" value="${currentgame.id}"></td>
 <td>${currentgame.title}</td>
 <td>${currentgame.publisher}</td>
-<td>${currentgame.platform}</td>
+<td>${currentgame.platform.consoleName}</td>
 <td>${currentgame.year}</td>
 </tr>
 </c:forEach>

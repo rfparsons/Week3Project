@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.Console;
 import model.Game;
 
 /**
@@ -31,8 +32,13 @@ public class AddGameServlet extends HttpServlet {
 //		System.out.println("CCCCCCCCCCCCCCCCCCCCCCC");
 		String title = request.getParameter("title");
 		String publisher = request.getParameter("publisher");
-		String platform = request.getParameter("platform");
+		String platformName = request.getParameter("platform");
 		int year = Integer.parseInt(request.getParameter("year"));
+		
+		Console platform = new Console(platformName);
+		ConsoleHelper ch = new ConsoleHelper();
+		
+		ch.insertConsole(platform);
 		
 		Game gm = new Game(title, publisher, platform, year);
 		GameHelper gh = new GameHelper();

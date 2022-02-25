@@ -40,14 +40,14 @@ public class EditItemServlet extends HttpServlet {
 		
 		String title = request.getParameter("title");
 		String publisher = request.getParameter("publisher");
-		String platform = request.getParameter("platform");
+//		Console platform = request.getParameter("platform");
 		int year = Integer.parseInt(request.getParameter("year"));
 		Integer tempId = Integer.parseInt(request.getParameter("id"));
 		
 		Game itemToUpdate = gh.searchForGameById(tempId);
 		itemToUpdate.setTitle(title);
 		itemToUpdate.setPublisher(publisher);
-		itemToUpdate.setPlatform(platform);
+		itemToUpdate.setPlatform(itemToUpdate.getPlatform());
 		itemToUpdate.setYear(year);
 		
 		gh.updateGame(itemToUpdate);
