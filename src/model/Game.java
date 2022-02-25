@@ -5,7 +5,6 @@
  */
 package model;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -30,7 +29,7 @@ public class Game {
 	@Column(name="PUBLISHER")
 	private String publisher;
 	@JoinColumn(name="PLATFORM")
-	@ManyToOne(cascade=CascadeType.PERSIST)
+	@ManyToOne
 	private Console platform;
 	@Column(name="YEAR")
 	private int year;
