@@ -9,6 +9,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -26,8 +28,9 @@ public class Game {
 	private String title;
 	@Column(name="PUBLISHER")
 	private String publisher;
-	@Column(name="PLATFORM")
-	private String platform;
+	@JoinColumn(name="PLATFORM")
+	@ManyToOne
+	private Console platform;
 	@Column(name="YEAR")
 	private int year;
 	/**
@@ -44,7 +47,7 @@ public class Game {
 	 * @param platform
 	 * @param year
 	 */
-	public Game(String title, String publisher, String platform, int year) {
+	public Game(String title, String publisher, Console platform, int year) {
 		super();
 		this.title = title;
 		this.publisher = publisher;
@@ -93,13 +96,13 @@ public class Game {
 	/**
 	 * @return the platform
 	 */
-	public String getPlatform() {
+	public Console getPlatform() {
 		return platform;
 	}
 	/**
 	 * @param platform the platform to set
 	 */
-	public void setPlatform(String platform) {
+	public void setPlatform(Console platform) {
 		this.platform = platform;
 	}
 	/**
@@ -118,7 +121,7 @@ public class Game {
 
 	@Override
 	public String toString() {
-		return "Game [title=" + title + ", publisher=" + publisher + ", platform=" + platform + ", year=" + year + "]";
+		return "Game [title=" + title + ", publisher=" + publisher + ", platform=" + platform.toString() + ", year=" + year + "]";
 	}
 
 	/**

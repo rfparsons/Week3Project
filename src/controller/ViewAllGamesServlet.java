@@ -20,7 +20,7 @@ public class ViewAllGamesServlet extends HttpServlet {
     public ViewAllGamesServlet() {
         super();
         // TODO Auto-generated constructor stub
-        System.out.println("DDDDDDDDDDDDDDDDDDDDDDDDDDDDDD");
+//        System.out.println("DDDDDDDDDDDDDDDDDDDDDDDDDDDDDD");
     }
 
 	/**
@@ -29,7 +29,7 @@ public class ViewAllGamesServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 //		int goodNum = 1/0;
-		System.out.println("BBBBBBBBBBBBBBBBBBBBBBBBBBBBB");
+//		System.out.println("BBBBBBBBBBBBBBBBBBBBBBBBBBBBB");
 		GameHelper gh = new GameHelper();
 		
 		request.setAttribute("allGames", gh.showAllGames());
@@ -52,7 +52,7 @@ public class ViewAllGamesServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("AAAAAAAAAAAAAAAAAAAAAAAA");
+//		System.out.println("AAAAAAAAAAAAAAAAAAAAAAAA");
 		doGet(request, response);
 	}
 
